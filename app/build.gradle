@@ -15,7 +15,9 @@ ext {
 }
 
 android {
-    compileSdkVersion 30
+    // Mise à jour du SDK et des outils de compilation
+    compileSdkVersion 34 // Utilise Android 14
+    buildToolsVersion "34.0.0" // Outils pour Android 14
 
     signingConfigs {
         debug {
@@ -30,7 +32,6 @@ android {
             keyAlias "bpp"
             keyPassword "bluetoothplusplus"
 
-            // Optional, specify signing versions used
             v1SigningEnabled true
             v2SigningEnabled true
         }
@@ -39,8 +40,7 @@ android {
     defaultConfig {
         applicationId "com.github.teamjcd.bpp"
         minSdkVersion 27
-        //noinspection ExpiredTargetSdkVersion
-        targetSdkVersion 27
+        targetSdkVersion 34 // Version cible Android 14
         versionCode projectVersionCode
         versionName projectVersionName
 
@@ -87,7 +87,6 @@ dependencies {
     implementation 'androidx.annotation:annotation-experimental:1.1.0'
     implementation 'androidx.appcompat:appcompat:1.3.1'
     implementation "androidx.preference:preference:1.1.1"
-
     implementation 'com.google.android.material:material:1.4.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.1'
     compileOnly fileTree(dir: 'libs', include: ['*.aar', '*.jar'], exclude: [])
